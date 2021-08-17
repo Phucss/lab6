@@ -51,9 +51,9 @@ public class MathApplicationTest {
 		//add the behavior of calc service to add two numbers
 		when(calcService.add(30.0,20.0)).thenReturn(50.00);
 		//test the add functionality
-		Assert.assertEquals(mathApplication.add(10.0, 20.0),30.0,0.0);
+		Assert.assertEquals(mathApplication.add(30.0, 20.0),50.0,0.0);
 		//verify the behavior
-		verify(calcService).add(10.0, 20.0);
+		verify(calcService).add(30.0, 20.0);
 	}
 	
 	@Test
@@ -111,7 +111,7 @@ public class MathApplicationTest {
 		// now test a normal case
 		when(calcService.modulus(20.0,10.0)).thenReturn(0.00);
 		//test the modulus functionality
-		Assert.assertEquals(mathApplication.modulus(20.0, 10.0),2.0,0.0);
+		Assert.assertEquals(mathApplication.modulus(20.0, 10.0),0.0,0.0);
 	}
 
 }
