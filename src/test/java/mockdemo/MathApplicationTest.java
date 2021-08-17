@@ -47,6 +47,16 @@ public class MathApplicationTest {
 	}
 	
 	@Test
+	public void testAdd2( ){
+		//add the behavior of calc service to add two numbers
+		when(calcService.add(30.0,20.0)).thenReturn(50.00);
+		//test the add functionality
+		Assert.assertEquals(mathApplication.add(10.0, 20.0),30.0,0.0);
+		//verify the behavior
+		verify(calcService).add(10.0, 20.0);
+	}
+	
+	@Test
 	public void testSubtract() {
 		//add the behavior of calc service to subtract two numbers
 		when(calcService.subtract(20.0,10.0)).thenReturn(10.00);
